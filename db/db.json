@@ -1,18 +1,67 @@
 {
-  "usuarios": [
+  "filmes": [
     {
-      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "id": "1",
+      "titulo": "Matrix",
+      "descricao": "Matrix é um filme de ficção científica que se passa num futuro distópico onde a humanidade está presa em uma realidade virtual simulada, criada por máquinas inteligentes. Neo, um hacker, é recrutado por um grupo de rebeldes para se juntar à luta contra as máquinas e descobrir a verdade sobre o mundo.",
+      "imagem": "img/matrix.jpg",
+      "ano": 1999,
+      "genero": "Ficção Científica",
+      "nota": 7.9
     },
     {
-      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "id": "2",
+      "titulo": "Interstellar",
+      "descricao": "Uma jornada através do espaço para salvar a humanidade.",
+      "imagem": "img/interstellar.jpg",
+      "ano": 2014,
+      "genero": "Ficção Científica",
+      "nota": 8.7
+    },
+    {
+      "id": "3",
+      "titulo": "O Poderoso Chefão",
+      "descricao": "A história da família mafiosa Corleone.",
+      "imagem": "img/chefao.jpg",
+      "ano": 1972,
+      "genero": "Crime, Drama",
+      "nota": 9.2
+    },
+    {
+      "id": "4",
+      "titulo": "Coringa",
+      "descricao": "A origem de um dos vilões mais icônicos do cinema.",
+      "imagem": "img/coringa.jpg",
+      "ano": 2019,
+      "genero": "Drama, Suspense",
+      "nota": 5.2
+    },
+    {
+      "id": "6529",
+      "titulo": "Rambo III",
+      "descricao": " Rambo é chamado a lutar na Guerra Soviética-Afegã para resgatar seu antigo mentor, o Coronel Trautman, que foi capturado pelos soviéticos. Ele se alia aos rebeldes afegãos para combater a invasão soviética e, ao mesmo tempo, busca vingança pela captura de Trautman.",
+      "imagem": "img/rambo.jpg",
+      "ano": 1988,
+      "genero": "Ação, Guerra",
+      "nota": 5.8
+    },
+    {
+      "titulo": "Carros 3",
+      "descricao": "MacQueen após ir mal na temporada busca novas tecnologias de treino para melhorar nas corridas.",
+      "imagem": "https://br.web.img2.acsta.net/pictures/17/03/10/15/25/441162.jpg",
+      "ano": 2017,
+      "genero": "Ação, Infantil",
+      "id": "99fc",
+      "nota": 6.7
+    },
+    {
+      "titulo": "Homem-Aranha: Sem Volta Para Casa",
+      "descricao": "Peter Parker enfrenta vilões de múltiplos universos enquanto tenta consertar as consequências de suas escolhas.",
+      "imagem": "https://www.sonypictures.com.br/sites/brazil/files/2022-03/KEY%20ART_SPIDER%20NO%20WAY%20HOME.JPG",
+      "ano": 2021,
+      "genero": "Ação, Aventura",
+      "id": "e106",
+      "nota": 8.2
     }
   ]
 }

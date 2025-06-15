@@ -11,15 +11,15 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Saulo Peixoto Ferreira
+- Matricula: 893070
+- Proposta de projeto escolhida: Página de filmes
+- Breve descrição sobre seu projeto: Catálogo de filmes que é possivel adicionar um novo filme, mostra detalhes dos filmes e graficos da avaliação dos filmes
 
 **Print da tela com a implementação**
 
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
+Ao adicionar novos filmes o grafico adiciona no grafico conforme as notas e categoria
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+![alt text](image.png)
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+![alt text](image-1.png)
