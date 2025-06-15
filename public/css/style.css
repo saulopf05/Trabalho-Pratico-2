@@ -15,7 +15,7 @@ body {
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ff004f !important;
+  color: #ff004f !important; /* Cor vermelha vibrante para o logo */
 }
 
 /* Carrossel */
@@ -36,11 +36,88 @@ body {
   color: #fff;
 }
 
-/* Cards de filmes */
+/* --- Novas Regras de Estilo para os Componentes Adicionados --- */
+
+/* Títulos gerais (h1 e h2) */
+h1 { /* Adicionado estilo para h1 para manter consistência */
+    color: #ff004f;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    color: #ff004f; /* Mantém a cor vibrante dos títulos */
+    text-align: center;
+    margin-top: 3rem; /* Espaçamento superior */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Campo de Pesquisa */
+.input-group {
+    max-width: 600px; /* Limita a largura para melhor visualização */
+    margin: 2rem auto; /* Centraliza e adiciona margem */
+}
+
+.form-control {
+    background-color: #2a2a2a; /* Fundo mais escuro para o campo */
+    border: 1px solid #444;
+    color: #f0f0f0;
+}
+
+.form-control::placeholder {
+    color: #bbb;
+}
+
+.form-control:focus {
+    background-color: #2a2a2a;
+    border-color: #ff004f; /* Borda da cor do tema ao focar */
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 79, 0.25); /* Sombra da cor do tema ao focar */
+    color: #f0f0f0;
+}
+
+/* Botões primários (para 'Login', 'Cadastrar', 'Ver Detalhes') */
+.btn-primary {
+    background-color: #ff004f; /* Botão com a cor principal */
+    border-color: #ff004f;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #cc003f; /* Tom mais escuro no hover */
+    border-color: #cc003f;
+}
+
+/* Botões 'info' (usados para login/cadastro de usuário) */
+.btn-info { /* Sobrescrevendo o azul padrão do Bootstrap */
+    background-color: #ff004f; /* Cor principal do tema */
+    border-color: #ff004f;
+    color: #fff !important; /* Garante que o texto seja branco */
+}
+
+.btn-info:hover {
+    background-color: #cc003f; /* Tom mais escuro no hover */
+    border-color: #cc003f;
+}
+
+/* Textos 'info' (usados em labels de formulários) */
+.text-info { /* Sobrescrevendo o azul padrão do Bootstrap */
+    color: #ff004f !important; /* Cor principal do tema */
+}
+
+
+/* Cards de filmes (ajustes e ícone de favorito) */
 .card {
   background-color: #1e1e1e;
   border: none;
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%; /* Garante que todos os cards na mesma linha tenham a mesma altura */
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -51,10 +128,15 @@ body {
 .card img {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  height: 250px; /* Altura fixa para as imagens dos cards */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
 }
 
 .card-body {
   padding: 1rem;
+  display: flex; /* Para usar flexbox e empurrar o footer para baixo */
+  flex-direction: column;
+  flex-grow: 1; /* Permite que o corpo do card se expanda */
 }
 
 .card-title {
@@ -65,7 +147,86 @@ body {
 
 .card-text {
   color: #ccc;
+  flex-grow: 1; /* Permite que o texto se expanda */
 }
+
+/* Ícone de favorito */
+.favorito-icon, .favorito-icon-details {
+    font-size: 1.5rem; /* Tamanho maior para o ícone */
+    color: #6c757d; /* Cor padrão cinza do Bootstrap (secondary) */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out; /* Transição suave */
+}
+
+/* Cor do coração quando marcado como favorito (vermelho do Bootstrap danger) */
+.favorito-icon.fas, .favorito-icon-details.fas {
+    color: #dc3545 !important; /* Força a cor vermelha */
+}
+
+/* Alinhamento do botão e ícone de favorito no card-body */
+.card-body .d-flex { /* Seleciona a div que contém o botão e o ícone */
+    margin-top: 1rem; /* Espaçamento entre o texto e a linha de ação */
+    align-items: center; /* Alinha verticalmente */
+}
+
+/* Seção de Visualização Avançada (Gráfico) */
+#visualizacao-avancada canvas {
+    max-width: 100%; /* Garante que o gráfico seja responsivo */
+    height: auto;
+    background-color: #1e1e1e; /* Fundo escuro para o gráfico */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de Informações do Autor */
+#informacoes-autor {
+    background-color: #1e1e1e; /* Cor de fundo escura, similar aos cards */
+    padding: 2rem; /* Adiciona o padding que antes era uma classe Bootstrap */
+    border-radius: 0.5rem; /* Adiciona o border-radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona o shadow */
+    text-align: center; /* Adiciona o text-align que antes era uma classe Bootstrap */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#informacoes-autor h2 {
+    margin-top: 0;
+}
+
+.author-avatar-custom {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: auto; /* Centraliza a imagem se display: block */
+    margin-right: auto;
+    display: block; /* Garante que as margens auto funcionem para centralizar */
+    border: 3px solid #ff004f; /* Borda colorida no avatar */
+}
+
+
+#informacoes-autor h3 {
+    color: #ff004f;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#informacoes-autor p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+#informacoes-autor .btn {
+    margin: 0.5rem;
+    border-color: #ff004f;
+    color: #ff004f;
+}
+
+#informacoes-autor .btn:hover {
+    background-color: #ff004f;
+    color: #fff;
+}
+
 
 /* Página de detalhes */
 #movie-details img {
@@ -81,7 +242,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* Footer (opcional) */
+/* Footer */
 footer {
   background-color: #000;
   color: #aaa;
@@ -90,3 +251,34 @@ footer {
   margin-top: 3rem;
   border-top: 1px solid #222;
 }
+
+/* Modal de Sugestão de Login */
+.modal-content.bg-dark { /* Fundo do modal com tema escuro */
+    background-color: #1e1e1e !important;
+    border: 1px solid #333;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+}
+
+.modal-footer {
+    border-top: 1px solid #333;
+}
+
+.btn-close.btn-close-white { /* Botão fechar do modal em branco para contraste */
+    filter: invert(1) grayscale(100%) brightness(200%); /* Torna o X branco */
+}
+
+/* Ajustes para o btn-secondary (usado no modal de sugestão de login e em 'Cancelar Edição') */
+.btn-secondary {
+    background-color: #6c757d; /* Cor cinza padrão do Bootstrap */
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+

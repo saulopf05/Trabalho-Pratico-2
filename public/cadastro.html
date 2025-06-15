@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gigaflix - Cadastro</title>
+  <title>Gigaflix | Cadastro de Filmes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,71 +14,123 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Gigaflix</a>
-      <div>
-        <a class="btn btn-outline-light ms-2" href="cadastro.html">Cadastro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item" id="linkCadastroFilmes" style="display: none;">
+            <a class="nav-link" href="cadastro.html">Cadastro de filmes</a>
+          </li>
+          <li class="nav-item" id="linkFavoritos" style="display: none;">
+            <a class="nav-link" href="favoritos.html">Meus Favoritos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="apresentacao.html">Apresentação</a>
+          </li>
+          <li class="nav-item" id="authLink">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-
   <main class="container my-5">
+    <h1 class="text-info text-center mb-4">Cadastro e Gerenciamento de Filmes</h1>
 
-    <h2 class="mb-4 text-center">Cadastro de Filme</h2>
+    <div id="admin-content" style="display: none;">
+      <div class="card p-4 bg-dark text-white shadow mb-5">
+        <h3 class="text-info mb-4" id="form-title">Adicionar Novo Filme</h3>
+        <form id="filme-form">
+          <input type="hidden" id="filme-id" name="id">
 
-    <!-- Formulário de Cadastro -->
-    <form id="filme-form">
-      <div class="mb-3">
-        <label for="titulo" class="form-label">Título</label>
-        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título do filme" required>
+          <div class="mb-3">
+            <label for="titulo" class="form-label text-info">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título do filme"
+              required>
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="form-label text-info">Descrição:</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Descreva o filme"
+              required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imagem" class="form-label text-info">URL da Imagem:</label>
+            <input type="url" class="form-control" id="imagem" name="imagem" placeholder="Ex.: img/novo-filme.jpg ou URL externa"
+              required>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="ano" class="form-label text-info">Ano:</label>
+              <input type="number" class="form-control" id="ano" name="ano" placeholder="Ex.: 2025" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="genero" class="form-label text-info">Gênero:</label>
+              <input type="text" class="form-control" id="genero" name="genero" placeholder="Ex.: Ação, Drama" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="nota" class="form-label text-info">Nota (0-10):</label>
+              <input type="number" class="form-control" id="nota" name="nota" step="0.1" min="0" max="10"
+                placeholder="Ex.: 8.5" required>
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="destaque" name="destaque">
+            <label class="form-check-label text-info" for="destaque">
+              Marcar como Destaque (aparece no carrossel da Home)
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" id="btn-salvar-filme">Cadastrar Filme</button>
+          <button type="button" class="btn btn-secondary ms-2" id="btn-cancelar-edicao" style="display: none;">Cancelar Edição</button>
+        </form>
       </div>
-      <div class="mb-3">
-        <label for="descricao" class="form-label">Descrição</label>
-        <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Descreva o filme" required></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="imagem" class="form-label">URL da Imagem</label>
-        <input type="url" class="form-control" id="imagem" name="imagem" placeholder="Ex.: img/novo-filme.jpg" required>
-      </div>
-      <div class="mb-3">
-        <label for="ano" class="form-label">Ano</label>
-        <input type="number" class="form-control" id="ano" name="ano" placeholder="Ex.: 2025" required>
-      </div>
-      <div class="mb-3">
-        <label for="genero" class="form-label">Gênero</label>
-        <input type="text" class="form-control" id="genero" name="genero" placeholder="Ex.: Ação, Drama" required>
-      </div>
-      <div class="mb-3">
-        <label for="nota" class="form-label">Nota</label>
-        <input type="number" class="form-control" id="nota" name="nota" step="0.1" min="0" max="10" placeholder="Ex.: 8.5" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
 
-    <hr class="my-5">
+      <hr class="my-5">
 
-    <h3 class="mb-4 text-center">Filmes Cadastrados</h3>
+      <div class="card p-4 bg-dark text-white shadow">
+        <h3 class="text-info mb-4">Filmes Cadastrados</h3>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Título</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Gênero</th>
+                <th scope="col">Nota</th>
+                <th scope="col">Destaque</th> <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="filmes-tbody">
+              <tr>
+                <td colspan="7" class="text-center text-muted">Carregando filmes...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-    <!-- Tabela de Filmes -->
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Título</th>
-          <th scope="col">Ano</th>
-          <th scope="col">Gênero</th>
-          <th scope="col">Nota</th>
-          <th scope="col">Ações</th>
-        </tr>
-      </thead>
-      <tbody id="filmes-tbody">
-        <!-- Dados dinâmicos do cadastro.js -->
-      </tbody>
-    </table>
+    <div id="acesso-negado" class="alert alert-danger text-center my-5" role="alert" style="display: none;">
+      <h4 class="alert-heading">Acesso Negado!</h4>
+      <p>Você não tem permissão para acessar esta página. Apenas administradores podem gerenciar filmes.</p>
+      <hr>
+      <p class="mb-0">Por favor, faça login com uma conta de administrador.</p>
+    </div>
 
   </main>
 
+  <footer class="text-center py-3 bg-dark text-white">
+    <small>&copy; 2025 Gigaflix. Todos os direitos reservados.</small>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/cadastro.js"></script>
+  <script src="js/app.js"></script> 
+  <script src="js/cadastro.js"></script> 
 
 </body>
-
 </html>
